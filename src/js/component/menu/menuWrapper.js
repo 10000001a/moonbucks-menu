@@ -9,7 +9,10 @@ export default function menuWrapper(menuList) {
       <ul id="espresso-menu-list" class="mt-3 pl-0">
       ${menuList
         .map(
-          (menu) => `<li class="menu-list-item d-flex items-center py-2">
+          (
+            menu,
+            i
+          ) => `<li class="menu-list-item d-flex items-center py-2" data-index="${i}">
             <span class="w-100 pl-2 menu-name">${menu}</span>
             <button
               type="button"
