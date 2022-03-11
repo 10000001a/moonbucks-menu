@@ -15,16 +15,16 @@ export default function App() {
     render();
   };
 
-  const updateMenu = (e) => {
-    espressoMenuList[e.target.parentNode.dataset.index] =
+  const updateMenu = ({ target }) => {
+    espressoMenuList[target.parentNode.dataset.index] =
       window.prompt('메뉴 수정');
 
     render();
   };
 
-  const deleteMenu = (e) => {
+  const deleteMenu = ({ target }) => {
     if (window.confirm('정말 삭제하시겠습니까?')) {
-      espressoMenuList.splice(e.target.parentNode.dataset.index, 1);
+      espressoMenuList.splice(target.parentNode.dataset.index, 1);
     }
 
     render();
@@ -55,8 +55,8 @@ export default function App() {
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
+    document.addEventListener('keydown', ({ key }) => {
+      if (key === 'Enter') {
         submitMenu();
       }
     });
